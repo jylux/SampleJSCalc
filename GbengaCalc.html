@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            table{
+                    border: 2px solid black;
+                    width:20%;
+                    background-color:brown;
+            }
+            td{
+                    padding:5px;
+                    height:100%;
+                    color:white;
+            }
+            input{
+                    width:100%;
+                    height:200%;
+                    background-color:white;
+                    text-align: right;
+            }
+            button{
+                    width:100%;
+                    height:200%;
+                    color:black;
+            }
+            button:hover{
+                    color: rgb(118, 7, 192);
+                    font-weight:bold;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function digit(value){
+                document.form1.result.value +=value;
+            }
+            function erase(value){
+                document.form1.result.value =value;
+            }
+            function calc(){
+                //var evalu = eval(document.form1.result.value);
+                document.form1.result.value = eval(document.form1.result.value);
+            }
+        </script>
+        <form name="form1">
+            <table align="center">
+                <tr><td colspan="4">SIMPLE CALCULATOR</td></tr>
+                <tr><td colspan="4">
+                        <input type = "text" name="result" placeholder="0." disabled style="textalign:right"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button type = "button" onclick="digit(value)" value="1">1</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="2">2</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="3">3</button></td>
+                    <td><button type = "button" onclick="erase(value)" value="">C</button></td>
+                </tr>
+                <tr>
+                    <td><button type = "button" onclick="digit(value)" value="4">4</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="5">5</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="6">6</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="-">-</button></td>
+                </tr>
+                <tr>
+                    <td><button type = "button" onclick="digit(value)" value="7">7</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="8">8</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="9">9</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="/">/</button></td>
+                </tr>
+                <tr>
+                    <td><button type = "button" onclick="digit(value)" value="."><strong>.</strong></button></td>
+                    <td><button type = "button" onclick="digit(value)" value="0">0</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="*">x</button></td>
+                    <td><button type = "button" onclick="digit(value)" value="%">%</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type = "button" onclick="digit(value)" value="+">+</button></td>
+                    <td colspan="2"><button type = "button" onclick="calc()">=</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
